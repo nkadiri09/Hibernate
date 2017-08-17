@@ -18,38 +18,15 @@ public class UserDetails {
 	@Id
 	@GeneratedValue // @Column(name = "User_ID")
 	private int userid;
-
-	@Basic
-	@Column(name = "User_Name")
 	private String userName;
-	private String address;
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date joiningDate;
-	@Lob
-	private String description;
+	private Address address;
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
-	}
-
-	public Date getJoiningDate() {
-		return joiningDate;
-	}
-
-	public void setJoiningDate(Date joiningDate) {
-		this.joiningDate = joiningDate;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public int getUserid() {
