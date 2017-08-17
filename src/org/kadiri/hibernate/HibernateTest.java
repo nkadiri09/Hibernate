@@ -10,8 +10,8 @@ public class HibernateTest {
 	public static void main(String[] args) {
 		UserDetails user = new UserDetails();
 
-		user.setUserid(2);
-		user.setUserName("Naren");
+		user.setUserid(1);
+		user.setUserName("Narendra");
 
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
