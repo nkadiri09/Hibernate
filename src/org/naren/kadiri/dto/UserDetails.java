@@ -16,8 +16,7 @@ import javax.persistence.TemporalType;
 public class UserDetails {
 
 	@Id
-	// @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "User_ID")
+	@GeneratedValue // @Column(name = "User_ID")
 	private int userid;
 
 	@Basic
