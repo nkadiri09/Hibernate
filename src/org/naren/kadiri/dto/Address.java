@@ -1,13 +1,18 @@
 package org.naren.kadiri.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Address {
-
+	
+	@Column(name="Home_street")
 	private String street;
+	@Column(name="Home_City")
 	private String city;
+	@Column(name="Home_State")
 	private String state;
+	@Column(name="Home_PIN")
 	private String pin;
 
 	public String getStreet() {
