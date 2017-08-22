@@ -1,11 +1,14 @@
 package org.naren.kadiri.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,30 +24,15 @@ public class UserDetails {
 	@GeneratedValue
 	private int userid;
 	private String userName;
-	private Address home_Address;
+	@ElementCollection
+	private Set<Address> listOfAddress = new HashSet();
 	
-	@AttributeOverrides({
-		@AttributeOverride(column = @Column(name= "office_Street"), name = "street"),
-		@AttributeOverride(column = @Column(name= "office_City"), name = "city"),
-		@AttributeOverride(column = @Column(name= "office_State"), name = "state"),
-		@AttributeOverride(column = @Column(name= "office_PIN"), name = "pin")
-	})
-	private Address office_Address;
-
-	public Address getHome_Address() {
-		return home_Address;
+	public Set<Address> getListOfAddress() {
+		return listOfAddress;
 	}
 
-	public void setHome_Address(Address home_Address) {
-		this.home_Address = home_Address;
-	}
-
-	public Address getOffice_Address() {
-		return office_Address;
-	}
-
-	public void setOffice_Address(Address office_Address) {
-		this.office_Address = office_Address;
+	public void setListOfAddress(Set<Address> listOfAddress) {
+		this.listOfAddress = listOfAddress;
 	}
 
 	public int getUserid() {
