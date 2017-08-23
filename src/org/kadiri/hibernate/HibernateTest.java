@@ -15,21 +15,21 @@ public class HibernateTest {
 		UserDetails user = new UserDetails();
 
 		user.setUserName("Narendra");
-		
+
 		Address address = new Address();
 		address.setStreet("213");
 		address.setCity("Horsham");
 		address.setState("PA");
 		address.setPin("19044");
 
-		Address officeAddress = new Address();
-		officeAddress.setStreet("201 Passaic");
-		officeAddress.setCity("Harrison");
-		officeAddress.setState("NJ");
-		officeAddress.setPin("01549");
+		Address address1 = new Address();
+		address1.setStreet("201 Passaic");
+		address1.setCity("Harrison");
+		address1.setState("NJ");
+		address1.setPin("01549");
 
 		user.getListOfAddress().add(address);
-		user.getListOfAddress().add(officeAddress);
+		user.getListOfAddress().add(address1);
 
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();

@@ -1,5 +1,7 @@
 package org.naren.kadiri.dto;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,9 +15,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 @Entity(name = "USER_DETAILS")
 public class UserDetails {
@@ -24,14 +32,17 @@ public class UserDetails {
 	@GeneratedValue
 	private int userid;
 	private String userName;
+	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
 	@ElementCollection
-	private Set<Address> listOfAddress = new HashSet();
-	
-	public Set<Address> getListOfAddress() {
+	@JoinTable(name = "User_Address", joinColumns = @JoinColumn(name = "User_ID"))
+	@CollectionId(columns = { @Column(name = "Address_Id") }, generator = "hilo-gen", type = @Type(type = "long"))
+	private Collection<Address> listOfAddress = new ArrayList<Address>();
+
+	public Collection<Address> getListOfAddress() {
 		return listOfAddress;
 	}
 
-	public void setListOfAddress(Set<Address> listOfAddress) {
+	public void setListOfAddress(Collection<Address> listOfAddress) {
 		this.listOfAddress = listOfAddress;
 	}
 
