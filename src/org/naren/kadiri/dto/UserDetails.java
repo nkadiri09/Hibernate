@@ -12,6 +12,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,10 +33,9 @@ public class UserDetails {
 	@GeneratedValue
 	private int userid;
 	private String userName;
-	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
-	@ElementCollection
+
+	@ElementCollection(fetch = FetchType.EAGER)
 	@JoinTable(name = "User_Address", joinColumns = @JoinColumn(name = "User_ID"))
-	@CollectionId(columns = { @Column(name = "Address_Id") }, generator = "hilo-gen", type = @Type(type = "long"))
 	private Collection<Address> listOfAddress = new ArrayList<Address>();
 
 	public Collection<Address> getListOfAddress() {

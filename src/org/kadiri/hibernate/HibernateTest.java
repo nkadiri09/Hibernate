@@ -43,7 +43,8 @@ public class HibernateTest {
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 		user = (UserDetails) session.get(UserDetails.class, 1);
-		System.out.println("User we are retriving is: " + user.getUserName());
+		session.close();
+		System.out.println(user.getListOfAddress().size());
 
 	}
 
