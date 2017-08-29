@@ -19,6 +19,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -34,18 +35,19 @@ public class UserDetails {
 	@GeneratedValue
 	private int userid;
 	private String userName;
-	
-	@OneToOne
-	@JoinColumn(name="Vehicle_Id")
-	private Vehicle vehicle;
-	
-	
-	public Vehicle getVehicle() {
-		return vehicle;
+
+	@OneToMany
+	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
+	@JoinTable(name = "User_Vechicle", joinColumns = @JoinColumn(name = "User_Id"), inverseJoinColumns = @JoinColumn(name = "Vehicle_Id"))
+	@CollectionId(columns = { @Column(name = "Vehicle_SN") }, generator = "hilo-gen", type = @Type(type = "long"))
+	private Collection<Vehicle> vechicle = new ArrayList<Vehicle>();
+
+	public Collection<Vehicle> getVechicle() {
+		return vechicle;
 	}
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
+	public void setVechicle(Collection<Vehicle> vechicle) {
+		this.vechicle = vechicle;
 	}
 
 	public int getUserid() {
