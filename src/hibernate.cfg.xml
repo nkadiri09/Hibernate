@@ -29,6 +29,8 @@
 		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="org.naren.kadiri.dto.UserDetails" />
+		<mapping class="org.naren.kadiri.dto.Vehicle" />
+
 
 	</session-factory>
 </hibernate-configuration>
