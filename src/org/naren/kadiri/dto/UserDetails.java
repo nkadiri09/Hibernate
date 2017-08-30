@@ -36,10 +36,7 @@ public class UserDetails {
 	private int userid;
 	private String userName;
 
-	/*@OneToMany
-	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
-	@JoinTable(name = "User_Vechicle", joinColumns = @JoinColumn(name = "User_Id"), inverseJoinColumns = @JoinColumn(name = "Vehicle_Id"))
-	@CollectionId(columns = { @Column(name = "Vehicle_SN") }, generator = "hilo-gen", type = @Type(type = "long"))
+	@OneToMany(mappedBy = "user")
 	private Collection<Vehicle> vechicle = new ArrayList<Vehicle>();
 
 	public Collection<Vehicle> getVechicle() {
@@ -48,7 +45,7 @@ public class UserDetails {
 
 	public void setVechicle(Collection<Vehicle> vechicle) {
 		this.vechicle = vechicle;
-	}*/
+	}
 
 	public int getUserid() {
 		return userid;
