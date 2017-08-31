@@ -9,6 +9,7 @@ import java.util.Set;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -37,7 +38,7 @@ public class UserDetails {
 	private int userid;
 	private String userName;
 
-	@ManyToMany
+	@OneToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "Vehicle_User", joinColumns = @JoinColumn(name = "User_ID"), inverseJoinColumns = @JoinColumn(name = "Vehicle_id"))
 	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
 	@CollectionId(columns = { @Column(name = "SNO") }, generator = "hilo-gen", type = @Type(type = "long"))
