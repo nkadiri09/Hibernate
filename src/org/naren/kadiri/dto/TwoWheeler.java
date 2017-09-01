@@ -3,8 +3,7 @@ package org.naren.kadiri.dto;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-@Entity
-@DiscriminatorValue(value = "Bike")
+@Entity 
 public class TwoWheeler extends Vehicle {
 
 	private String StreeingHandil;
