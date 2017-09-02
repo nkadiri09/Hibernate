@@ -29,9 +29,9 @@
 		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="org.naren.kadiri.dto.UserDetails" />
-		<mapping class="org.naren.kadiri.dto.Vehicle" />
+<!-- 		<mapping class="org.naren.kadiri.dto.Vehicle" />
 		<mapping class="org.naren.kadiri.dto.TwoWheeler" />
-		<mapping class="org.naren.kadiri.dto.FourWheeler" />
+		<mapping class="org.naren.kadiri.dto.FourWheeler" /> -->
 
 
 	</session-factory>

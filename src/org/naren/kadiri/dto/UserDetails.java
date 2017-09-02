@@ -38,20 +38,6 @@ public class UserDetails {
 	private int userid;
 	private String userName;
 
-	@OneToMany(cascade = CascadeType.PERSIST)
-	@JoinTable(name = "Vehicle_User", joinColumns = @JoinColumn(name = "User_ID"), inverseJoinColumns = @JoinColumn(name = "Vehicle_id"))
-	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
-	@CollectionId(columns = { @Column(name = "SNO") }, generator = "hilo-gen", type = @Type(type = "long"))
-	private Collection<Vehicle> vechicle = new ArrayList<Vehicle>();
-
-	public Collection<Vehicle> getVechicle() {
-		return vechicle;
-	}
-
-	public void setVechicle(Collection<Vehicle> vechicle) {
-		this.vechicle = vechicle;
-	}
-
 	public int getUserid() {
 		return userid;
 	}
