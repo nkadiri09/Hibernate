@@ -19,20 +19,18 @@ public class HibernateTest {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
-		Criteria criteria = session.createCriteria(UserDetails.class);
-		criteria.add(Restrictions.eq("userName", "user10"))
-				.add(Restrictions.gt("userId", 10))
-				.add(Restrictions.between("userId", 1, 8));
-		
-		List<UserDetails> userList = (List<UserDetails>) criteria.list();
-		
+		UserDetails user = (UserDetails) session.get(UserDetails.class, 1);
 
 		session.getTransaction().commit();
 		session.close();
 
-		for (UserDetails users : userList) {
-			System.out.println("user details  is: " + users.getUserName());
-		}
+		Session session2 = sessionFactory.openSession();
+		session2.beginTransaction();
+
+		UserDetails user1 = (UserDetails) session2.get(UserDetails.class, 1);
+
+		session2.getTransaction().commit();
+		session2.close();
 
 	}
 

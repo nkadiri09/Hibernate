@@ -28,7 +28,6 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 @Entity(name = "USER_DETAILS")
-@NamedQuery(name = "UserDetails.byId", query = "from UserDetails where Userid = ?")
 @org.hibernate.annotations.Entity(selectBeforeUpdate = true)
 public class UserDetails {
 
