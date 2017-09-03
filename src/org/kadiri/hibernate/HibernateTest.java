@@ -16,7 +16,6 @@ public class HibernateTest {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		Query query = session.createQuery("from org.naren.kadiri.dto.UserDetails");
-
 		List userList = query.list();
 		session.getTransaction().commit();
 		session.close();
