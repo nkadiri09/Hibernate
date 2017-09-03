@@ -31,6 +31,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 @Entity(name = "USER_DETAILS")
+@org.hibernate.annotations.Entity(selectBeforeUpdate = true)
 public class UserDetails {
 
 	@Id
