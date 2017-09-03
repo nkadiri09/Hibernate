@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
+import org.naren.kadiri.dto.Address;
 import org.naren.kadiri.dto.UserDetails;
 
 public class HibernateTest {
@@ -19,8 +20,12 @@ public class HibernateTest {
 		session.beginTransaction();
 
 		Criteria criteria = session.createCriteria(UserDetails.class);
-		criteria.add(Restrictions.eq("userName", "user10"));
+		criteria.add(Restrictions.eq("userName", "user10"))
+				.add(Restrictions.gt("userId", 10))
+				.add(Restrictions.between("userId", 1, 8));
+		
 		List<UserDetails> userList = (List<UserDetails>) criteria.list();
+		
 
 		session.getTransaction().commit();
 		session.close();
