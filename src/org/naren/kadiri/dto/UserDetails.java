@@ -17,10 +17,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -31,6 +28,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 @Entity(name = "USER_DETAILS")
+@NamedQuery(name = "UserDetails.byId", query = "from UserDetails where Userid = ?")
 @org.hibernate.annotations.Entity(selectBeforeUpdate = true)
 public class UserDetails {
 
@@ -53,6 +51,10 @@ public class UserDetails {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public UserDetails() {
+		super();
 	}
 
 }
