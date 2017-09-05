@@ -20,6 +20,8 @@
 		<property name="current_session_context_class">thread</property>
 
 		<!-- Disable the second-level cache -->
+		<property name="cache.use_query_cache">true</property>
+		<property name="cache.use_secound_level_cache">true</property>
 		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
 		<!-- Echo all executed SQL to stdout -->
@@ -29,9 +31,8 @@
 		<property name="hbm2ddl.auto">update</property>
 
 		<mapping class="org.naren.kadiri.dto.UserDetails" />
-<!-- 		<mapping class="org.naren.kadiri.dto.Vehicle" />
-		<mapping class="org.naren.kadiri.dto.TwoWheeler" />
-		<mapping class="org.naren.kadiri.dto.FourWheeler" /> -->
+		<!-- <mapping class="org.naren.kadiri.dto.Vehicle" /> <mapping class="org.naren.kadiri.dto.TwoWheeler" 
+			/> <mapping class="org.naren.kadiri.dto.FourWheeler" /> -->
 
 
 	</session-factory>
