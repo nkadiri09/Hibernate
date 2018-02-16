@@ -8,7 +8,8 @@
 @Entity                         --- Hibernate will scan that package for any Java objects annotated with the @Entity annotation. If it finds any, 
 then it will begin the process of looking through that particular Java object to recreate it as a table in your database
 
-@GeneratedValue(strategy = GenerationType.AUTO) --- to generate auto value for the field like PrimaryKey (composite primarykey)
+@GeneratedValue(strategy = GenerationType.AUTO) --- to generate auto value for the field like PrimaryKey (surrogate primarykey)
+	like autogenerate sequence in Oracle, auto-increment value in MySql.
 
 
 
