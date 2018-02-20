@@ -50,7 +50,7 @@ UserDetails:
 </hibernate-configuration>
 
 
-#HibernateTest.java
+# HibernateTest.java
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -92,7 +92,7 @@ public class HibernateTest {
 
 }
 
-#Address.java
+# Address.java
 
 import javax.persistence.Embeddable;
 
@@ -108,7 +108,7 @@ public class Address {
 
 }
 
-#UserDetails
+# UserDetails
 
 import java.util.Date;
 
