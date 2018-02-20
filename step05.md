@@ -1,4 +1,4 @@
-## HibernateTest.
+## Customize JointTables Table Name and Fields.
 
 @ElementCollection: to save the value object inside the entity, if you Have more number of addresses, 
 then we have to separate those addresses from actual user.
