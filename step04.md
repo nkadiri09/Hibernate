@@ -3,7 +3,7 @@
 If we have more the one Address object to be embidded then we have ti take 2 diffrent address(Home Address, Office Address) object 
 variables and we can embidded in UserDetails class, all the variables save in the same table.
 
-## HibernateTest.java
+## HibernateTest.java 
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
