@@ -12,7 +12,7 @@ UserDetails:
 	State;
 	pin;
 
-  #hibernate.cfg.xml
+ #hibernate.cfg.xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
@@ -48,7 +48,6 @@ UserDetails:
 
 	</session-factory>
 </hibernate-configuration>
-
 
 
 #HibernateTest.java
@@ -92,7 +91,6 @@ public class HibernateTest {
 	}
 
 }
-
 
 #Address.java
 
