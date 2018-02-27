@@ -59,39 +59,39 @@ public class Address {
   //setter getters...
   }
   
-  ## UserDetails.java
-  
-  @Entity(name = "USER_DETAILS")
-  public class UserDetails {
-	@Id
-	@GeneratedValue
-	private int userid;
-	private String userName;
-	@ElementCollection
-	private Set<Address> listOfAddress = new HashSet();
-	
-	public Set<Address> getListOfAddress() {
-		return listOfAddress;
-	}
+	  ## UserDetails.java
 
-	public void setListOfAddress(Set<Address> listOfAddress) {
-		this.listOfAddress = listOfAddress;
-	}
+	  @Entity(name = "USER_DETAILS")
+	  public class UserDetails {
+		@Id
+		@GeneratedValue
+		private int userid;
+		private String userName;
+		@ElementCollection
+		private Set<Address> listOfAddress = new HashSet();
 
-	public int getUserid() {
-		return userid;
-	}
+		public Set<Address> getListOfAddress() {
+			return listOfAddress;
+			}
 
-	public void setUserid(int userid) {
-		this.userid = userid;
-	}
+		public void setListOfAddress(Set<Address> listOfAddress) {
+			this.listOfAddress = listOfAddress;
+		}
 
-	public String getUserName() {
-		return userName;
-	}
+		public int getUserid() {
+			return userid;
+		}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+		public void setUserid(int userid) {
+			this.userid = userid;
+		}
 
-}
+		public String getUserName() {
+			return userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+	}
