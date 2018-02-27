@@ -61,37 +61,41 @@ public class Address {
   
 	  ## UserDetails.java
 
-	  @Entity(name = "USER_DETAILS")
-	  public class UserDetails {
-		@Id
-		@GeneratedValue
-		private int userid;
-		private String userName;
-		@ElementCollection
-		private Set<Address> listOfAddress = new HashSet();
+			  @Entity(name = "USER_DETAILS")
+		public class UserDetails {
 
-		public Set<Address> getListOfAddress() {
-			return listOfAddress;
+			@Id
+			@GeneratedValue
+			private int userid;
+			private String userName;
+			@GenericGenerator(name = "hilo-gen", strategy = "hilo")
+			@ElementCollection
+			@JoinTable(name = "User_Address", joinColumns = @JoinColumn(name = "User_ID"))
+			@CollectionId(columns = { @Column(name = "Address_Id") }, generator = "hilo-gen", type = @Type(type = "long"))
+			private Collection<Address> listOfAddress = new ArrayList<Address>();
+
+			public Collection<Address> getListOfAddress() {
+				return listOfAddress;
 			}
 
-		public void setListOfAddress(Set<Address> listOfAddress) {
-			this.listOfAddress = listOfAddress;
-		}
+			public void setListOfAddress(Collection<Address> listOfAddress) {
+				this.listOfAddress = listOfAddress;
+			}
 
-		public int getUserid() {
-			return userid;
-		}
+			public int getUserid() {
+				return userid;
+			}
 
-		public void setUserid(int userid) {
-			this.userid = userid;
-		}
+			public void setUserid(int userid) {
+				this.userid = userid;
+			}
 
-		public String getUserName() {
-			return userName;
-		}
+			public String getUserName() {
+				return userName;
+			}
 
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+			public void setUserName(String userName) {
+				this.userName = userName;
+			}
 
-	}
+		}
