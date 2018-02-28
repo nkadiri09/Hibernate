@@ -69,8 +69,7 @@ import javax.persistence.Id;
 @Entity
 public class UserDetails {
 
-	@Id
-	@GeneratedValue
+	@Id 	@GeneratedValue
 	private int userid;
 	private String userName;
 
