@@ -36,9 +36,7 @@ public class HibernateTest {
 		user = (UserDetails) session.get(UserDetails.class, 1);
 		System.out.println("User we are retriving is: " + user.getUserName());
 
-	}
-
-}
+	} }
 
 ## Address.java
 
@@ -53,6 +51,4 @@ public class Address {
 
 	private String pin;
   
-  //setter getters..
-  
-  }
+  	//setter getters.. }
