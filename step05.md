@@ -39,9 +39,7 @@ public class HibernateTest {
 		user = (UserDetails) session.get(UserDetails.class, 1);
 		System.out.println("User we are retriving is: " + user.getUserName());
 
-	}
-
-}
+	} }
 
 ## Address
 
@@ -56,8 +54,7 @@ public class Address {
 	private String state;
 	@Column(name="Home_PIN")
 	private String pin;
-  //setter getters...
-  }
+  //setter getters.. }
   
 	  ## UserDetails.java
 
