@@ -11,8 +11,6 @@ then it will begin the process of looking through that particular Java object to
 @GeneratedValue(strategy = GenerationType.AUTO) --- to generate auto value for the field like PrimaryKey (surrogate primarykey)
 	like autogenerate sequence in Oracle, auto-increment value in MySql.
 
-
-
 # Retrive data from table using classname and primarykey
 
 	session = sessionFactory.openSession();
