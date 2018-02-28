@@ -57,8 +57,7 @@ public class HibernateTest {
 		session.beginTransaction();
 		session.save(user);
 		session.getTransaction().commit();
-	}
-}
+	} }
 
 # src/org/naren/kadiri/dto/UserDetails.java
 
