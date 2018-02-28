@@ -1,8 +1,5 @@
 # /hibernate.cfg.xml
 
-
-
-
 <!-- Need to configure the connection and driver in sessionFactory tag inside the hibernate.cfg.xml -->
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -39,7 +36,6 @@
 
 	</session-factory>
 </hibernate-configuration>
-
 
 # src/org/kadiri/hibernate/HibernateTest.java
 
@@ -92,5 +88,4 @@ public class UserDetails {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-}
+	} }
